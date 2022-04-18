@@ -14,11 +14,8 @@ private:
     void Solve(TreeNode* curr, int k, int& cnt, int& ans) {
         if (ans != -1) return;
 
-        if (curr->left) {
-            Solve(curr->left, k, cnt, ans);
-            cnt++;
-        }
-        else cnt++;
+        if (curr->left) Solve(curr->left, k, cnt, ans);
+        cnt++;
 
         if (cnt == k) ans = curr->val;
 
