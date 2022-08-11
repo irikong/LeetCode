@@ -19,13 +19,6 @@ private:
     bool Helper(TreeNode* curr, long long min, long long max) {
         if (curr == nullptr) return true;
         else if (!(min <= curr->val && curr->val <= max)) return false;
-
-        bool lCheck = curr->left ? curr->val > curr->left->val : true;
-        bool rCheck = curr->right ? curr->val < curr->right->val : true;
-
-        if (lCheck && rCheck)
-            return Helper(curr->left, min, (long long)curr->val - 1) && Helper(curr->right, (long long)curr->val + 1, max);
-
-        return false;
+        return Helper(curr->left, min, (long long)curr->val - 1) && Helper(curr->right, (long long)curr->val + 1, max);
     }
 };
