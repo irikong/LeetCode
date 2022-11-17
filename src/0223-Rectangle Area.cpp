@@ -4,9 +4,6 @@ public:
         int aArea = (ax2 - ax1) * (ay2 - ay1);
         int bArea = (bx2 - bx1) * (by2 - by1);
 
-        if (aArea == 0) return bArea;
-        if (bArea == 0) return aArea;
-
         int overlapWidth = max(min(ax2, bx2) - max(ax1, bx1), 0);
         int overlapHeight = max(min(ay2, by2) - max(ay1, by1), 0);
 
